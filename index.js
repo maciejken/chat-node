@@ -10,8 +10,8 @@ io.on('connection', (socket) => {
   console.log('a user connected');
 
   socket.on('message', (message) => {
-    console.log(message);
-    io.emit('message', `${socket.id.substr(0, 2)} said ${message}`);
+    console.log(`message: '${message}', socket.id: '${socket.id}'`);
+    io.emit('message', `${socket.id} said ${message}`);
   });
 
   socket.on('disconnect', () => {
